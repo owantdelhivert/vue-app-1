@@ -1,3 +1,35 @@
+<!DOCTYPE html>
 <html>
-    
+    <head>
+        <title>app 1</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+    <div id="main">
+        <h1>Articles</h1>
+        <ul>
+            <li v-for="article in articles">{{ article.name }} : {{ article.price }}€</li>
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>
+    <script>
+        var demo = new Vue({
+            el: '#main',
+            data: {
+                articles: [
+                    {
+                        name: 'tasse',
+                        price: 1.5,
+                    }, {
+                        name: 'verre',
+                        price: 0.7,
+                    }
+                ]
+            }
+        });
+    </script>
+    </body>
 </html>
