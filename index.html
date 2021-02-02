@@ -41,9 +41,11 @@
             },
             methods:{
                 addArticle: function(article){
-                    article.quantite = article.quantite -1;
-                    this.user.panier.add(article);
-                    console.log(article.quantite)
+                    if(article.quantite > 0) {
+                        article.quantite = article.quantite - 1;
+                        // this.user.panier.add(article);
+                    }else
+                        console.log("Aucun stock pour le produit " + article.name)
                 },
                 removeArticle:function(){
                     //TODO
